@@ -40,6 +40,7 @@ AC_DEFUN([GUUL_CHECK_UUID],
               AC_DEFINE([GUUL_PLATFORM_GENERIC],[1],[Using external library])
               GUUL_LIBS="$UUID_LIBS"
               GUUL_CFLAGS="$UUID_CFLAGS"
+              GUUL_PKG=uuid
             ],
             [AC_MSG_ERROR([none])
           ])
@@ -47,5 +48,7 @@ AC_DEFUN([GUUL_CHECK_UUID],
 
     AC_SUBST(GUUL_LIBS)
     AC_SUBST(GUUL_CFLAGS)
+    AC_SUBST(GUUL_PKG)
+    GUUL_FLAVOR=$uuid_found
     AC_MSG_RESULT([using flavor $uuid_found])
 ])
